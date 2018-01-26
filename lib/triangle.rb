@@ -24,7 +24,5 @@ class Triangle
   end
 
   class TriangleError < StandardError
-    def message
-      "Your shit is illegal"
     end
   end

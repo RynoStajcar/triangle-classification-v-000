@@ -1,9 +1,9 @@
 class Triangle
 
-  attr_accessor
+  attr_accessor :side1, :side2, :side3
 
-  def initialize
+  def initialize(side1:, side2:, side3:)
 
   end
-
+  
 end

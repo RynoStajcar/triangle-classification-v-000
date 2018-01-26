@@ -9,13 +9,19 @@ class Triangle
   end
 
   def kind
-    if side1 == side2 && side2 == side3
-      :equilateral
+    if side1 > 0 && side2 > 0 && side3 > 0
+      then
+      if side1 == side2 && side2 == side3
+      :Equilateral
     elsif side1 == side2 || side2 == side3 || side1 == side3
       :isosceles
     else
       :scalene
     end
+  else
+    "Your object is illegal"
+  end
+
   end
 
 end

@@ -20,11 +20,11 @@ class Triangle
         end
     else
       raise TriangleError
-    rescue TriangleError
+    rescue TriangleError =>
       puts error.message
     end
   end
-  
+
   class TriangleError < StandardError
     def message
       "Your shit is illegal"

@@ -11,17 +11,25 @@ class Triangle
   def kind
     if side1 > 0 && side2 > 0 && side3 > 0
       then
-      if side1 == side2 && side2 == side3
-      :equilateral
-    elsif side1 == side2 || side2 == side3 || side1 == side3
-      :isosceles
+        if side1 == side2 && side2 == side3
+          :equilateral
+        elsif side1 == side2 || side2 == side3 || side1 == side3
+          :isosceles
+        else
+          :scalene
+        end
     else
-      :scalene
+      raise TriangleError
+    rescue TriangleError
+      puts error.message
     end
-  else
-    "Your object is illegal"
+  end
+  
+  class TriangleError < StandardError
+    def message
+      "Your shit is illegal"
+    end
   end
 
-  end
 
 end

@@ -9,7 +9,7 @@ class Triangle
   end
 
   def kind
-    validate_triangle
+    true_triangle
       if side1 == side2 && side2 == side3
         :equilateral
       elsif side1 == side2 || side2 == side3 || side1 == side3
@@ -19,13 +19,12 @@ class Triangle
       end
     end
 
-
-    def validate_triangle
-      real_triangle = [(side1 + side2 > side3), (side1 + side3 > side2), (side2 + side3 > side1)]
-      [side1, side2, side3].each { |s| real_triangle << false if s <= 0 }
-      raise TriangleError if real_triangle.include?(false)
+  def true_triangle
+    if side1 <= 0 || side2 <= 0 || side3 <= 0 || side1 + side2 > side3 || side2 + side3 > side1 || side1 + side3 > side2
+      raise TriangleError
     end
-end
+    end
+  end
 
   class TriangleError < StandardError
   end

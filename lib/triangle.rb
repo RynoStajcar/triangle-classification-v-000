@@ -8,7 +8,7 @@ class Triangle
     @side3 = side3
   end
 
-  def triangle_type(side1, side2, side3)
+  def kind(side1, side2, side3)
     if side1 == side2 && side2 == side3
       "Equilateral"
     elsif side1 == side2 || side2 == side3 || side1 == side3
